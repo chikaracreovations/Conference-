@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>The Demo Store</title>
+    <!-- Include Swiper.js CSS and JS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+ <!-- Swiper CSS (Place this in the <head> section) -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS (Place this just before </body> tag) -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js
+  "></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  
+  <script type="module" src="main.js" defer></script>
+  
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  
+      <header>
+      
+  <button id="menu-toggle-btn" onclick="toggleSideMenu()">☰</button>   
+        
+        
+        
+       BIT INTERNATIONAL COFERENCE 2025
+     
+     
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home','home2','sale-timer','macrame-featured-section','details')">Home</a></li>
+                <li><a href="#" onclick="showSection('about')">About</a></li>
+            
+                <li><a href="#" onclick="showSection('cart')">Registeration Form(<span class="cart-count">0</span>)</a></li>
+                <li><a href="#" onclick="showSection('contact')">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+  <!-- 🔹 Side Menu (Hidden by Default) -->
+<div id="side-menu">
+    <button id="close-menu-btn" onclick="toggleSideMenu()">✖</button>
+    <ul>
+        <li><a href="#" onclick="showSection('venue')">📍 Venue</a></li>
+        <li><a href="#" onclick="showSection('guidelines')">📜 Guidelines</a></li>
+        <li><a href="#" onclick="showSection('speakers')">🎤 Speakers</a></li>
+        <li><a href="#" onclick="showSection('event-details')">📅 Event Details</a></li>
+        <li><a href="#" onclick="showSection('workshops')">🛠 Workshops</a></li>
+        <li><a href="#" onclick="showSection('schedule')">🕒 Schedule</a></li>
+    </ul>
+</div>
+  
+    
+
+    <main>
+    
+    
+    <br>
+    <br>
+       <strong> </strong>  
+    
+<!-- Home Section -->
+<section id="home" class="section hero active">
+   <h2> Welcome to College Conference 2025 </h2>
+   
+        <p>Join TechInnovate 2025, a premier conference bringing together leading researchers, engineers, and students.
+        
+       <p> Secure your spot at the International Education Conference. Explore Guidance and Register now to join the International education conference.</p>
+    
+    
+    <button onclick="showSection('cart')">Register Now</button>
+</section>
+
+
+
+<section id="macrame-featured-section" class="section  active">
+    <div class="macrame-featured-content">
+
+        <h2>Event Schedule</h2>
+        <ul>
+            <li><b>10:00 AM</b> - Conference Ground (Dr. Ramesh Kumar)</li>
+        <br>
+            <li><b>11:30 AM</b> - Auditorium (Dr. Akaash Gupta)</li>
+        </ul>
+
+    </div>
+</section>
+
+
+<section id="details" class="section active">
+    <p>Engage with top speakers from top research institutions like abc and xyz .Join us for an amazing experience with top speakers and networking opportunities.</p>
+    </section>
+
+
+
+
+<section id="home2" class="section  active">
+    <h2>Main Chief Guests:</h2>
+    <br>
+     <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card" onclick="showSection('speakers')">
+           <div class="badge">Professor </div>
+            <img src="images/4.gif" alt="Demo Product 1">
+          
+             </div>
+
+        <!-- Product 2 -->
+        <div class="product-card" onclick="showSection('speakers')" >
+            <img src="images/1.gif" alt="Demo Product">
+            
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card" 
+       onclick="showSection('speakers')">
+            <div class="badge">Dr Kumar</div>
+            <img src="images/3.gif" alt="Demo Product 3">
+
+        </div>
+       
+               <!-- Product 4 -->
+        <div class="product-card" 
+       onclick="showSection('speakers')">
+            <div class="badge">Chairman</div>
+            <img src="images/2.gif" alt="Demo Product 4">
+
+        </div> 
+        
+    </div>
+   
+</section>
+
+<section id="sale-timer" class="section active">
+  <h2>Register Now! Conference begins in</h2>
+  <div class="timer-container">
+    <span id="hours">03</span> :
+    <span id="minutes">00</span> :
+    <span id="seconds">00</span>
+  </div>
+  <p4></p4>
+</section>
+
+<!-- Floating Help Button -->
+<div id="help-button" onclick="toggleChatbox()">❔</div>
+
+<!-- Chatbox -->
+<div id="chatbox">
+    <div class="chat-header">
+        <span>Support Chat</span>
+        <button onclick="toggleChatbox()">✖</button>
+    </div>
+    <div class="chat-body">
+        <textarea id="chat-message" placeholder="Type your message..."></textarea>
+        <button onclick="sendChatMessage()">Send</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+            
+        <!-- About Us Content on Home Page -->
+        <!-- About Us Section -->
+<section id="about" class="section about-us">
+    <div class="container">
+        <h2 class="about-heading">About TechInnovate 2025</h2>
+        <p class="about-description">
+            TechInnovate 2025 is a premier technology conference that brings together students, professionals, and academics to share insights on emerging trends in Artificial Intelligence, Robotics, and Data Science.  
+            Join us for an immersive experience of **keynote talks, workshops, and networking opportunities** with industry pioneers.
+        </p>
+
+        <div class="key-highlights">
+            <h3>✨ Key Highlights</h3>
+            <ul>
+                <li>🎤 <strong>Keynote Speakers</strong> – Talks by Industry Leaders in AI & Robotics</li>
+                <li>🛠️ <strong>Workshops & Hackathons</strong> – Hands-on AI & ML projects</li>
+                <li>🤝 <strong>Networking Sessions</strong> – Meet industry experts and recruiters</li>
+                <li>🚀 <strong>Startup Showcase</strong> – Emerging AI startups pitch ideas</li>
+            </ul>
+        </div>
+
+        <div class="speakers">
+            <h3>🎙️ Speakers Lineup</h3>
+            <ul>
+                <li>👨‍💻 Dr. Ramesh Kumar (AI Researcher, Google DeepMind)</li>
+                <li>🤖 Elena Vasquez (Lead Robotics Engineer, Tesla)</li>
+                <li>📊 Dr. Suresh Patel (Data Science Director, Microsoft)</li>
+                <li>🚀 Ananya Roy (Founder, AI Startup "NeuroVision")</li>
+            </ul>
+        </div>
+
+        <div class="conference-guidelines">
+            <h3>📌 Conference Guidelines</h3>
+            <ul>
+                <li>🔹 <strong>Registration</strong>: All attendees must register online before the event.</li>
+                <li>🔹 <strong>Dress Code</strong>: Business casual or professional attire is recommended.</li>
+                <li>🔹 <strong>Code of Conduct</strong>: Respectful and professional behavior is expected.</li>
+                <li>🔹 <strong>Photography & Recording</strong>: Allowed only with prior permission.</li>
+                <li>🔹 <strong>Health Precautions</strong>: Follow local health guidelines and venue policies.</li>
+            </ul>
+        </div>
+
+        <div class="event-details">
+            <h3>📍 Event Details</h3>
+            <p><strong>Date:</strong> March 15-17, 2025</p>
+            <p><strong>Venue:</strong> Grand Convention Center, Bijnor, India</p>
+            <p><strong>Time:</strong> 9:00 AM - 6:00 PM (IST)</p>
+        </div>
+
+        <div class="contact-info">
+            <h3>📞 Contact Us</h3>
+            <p>Email: <a href="mailto:info@techinnovate2025.com">info@techinnovate2025.com</a></p>
+            <p>Phone: +91 1234567891</p>
+            <p>Website: <a href="https://techinnovate2025.com" target="_blank">techinnovate2025.com</a></p>
+        </div>
+    </div>
+</section>
+        
+
+        
+
+
+
+<!-- Cart Section -->
+<section id="cart" class="section">
+    <h2>Registeration Form</h2>
+    <li style="list-style-type: none; text-align: right;">
+
+</li>
+    <br>
+    
+    <!-- Cart Items -->
+    <div id="cart-items">
+    
+    </div>
+    
+  <p> Thank you for visiting the IEEE Conference and Event Registration page. This application allows you to officially register your conference or event with IEEE. By completing the registration form you are taking significant steps toward planning a successful conference/event. Registration for your conference/event will take approximately 2-3 minutes to complete and you will need specific information.
+  </p>
+  
+  <br>
+  <br>
+  
+        <strong>Registration Fees:
+
+<br>💰 Students: ₹499
+<br>💰 Professionals: ₹999
+<br>💰 Early Bird (Before Feb 20): ₹399</strong> 
+
+<br>
+<br>
+<br>
+    
+    
+
+<h3>Student Details</h3>
+<div id="shipping-address">
+    <div class="address-row">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+    </div>
+    <div class="address-row">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+        <small>Example: example@email.com</small>
+    </div>
+    <div class="address-row">
+        <label for="address1">Address Line 1:</label>
+        <input type="text" id="address1" placeholder="Street Address" required />
+    </div>
+    <div class="address-row">
+        <label for="address2">Address Line 2 (Optional):</label>
+        <input type="text" id="address2" placeholder="Apt, Suite, etc." />
+    </div>
+    <div class="address-row">
+        <label for="pincode">Pincode:</label>
+        <input type="number" id="pincode" placeholder="Enter pincode" required min="100000" max="999999" />
+        <small>6 digits (e.g., 123456)</small>
+    </div>
+    <div class="address-row">
+        <label for="city">City:</label>
+        <input type="text" id="city" placeholder="Enter city" required />
+    </div>
+    <div class="address-row">
+        <label for="state">State:</label>
+        <input type="text" id="state" placeholder="Enter state" required />
+    </div>
+    
+        <div class="address-row">
+       <label for="role">Select Your Role:</label>
+    <select id="role" required>
+        <option value="" disabled selected>-- Select an option --</option>
+        <option value="student">Student</option>
+        <option value="graduate">Graduate</option>
+        <option value="researcher">Researcher</option>
+        <option value="faculty">Faculty</option>
+        <option value="industry-professional">Industry Professional</option>
+        <option value="other">Other</option>
+    </div>
+</div>
+<br>
+
+
+     <!-- Checkbox to save data for future use -->
+            <div class="checkbox-container">
+               <br>
+               <br>
+                <input type="checkbox" id="saveDataCheckbox" />
+                <label for="saveDataCheckbox">Save Application Status temporarily</label>
+            
+             <br>
+                
+             <p>If you are still in the planning process or would like assistance with submitting your form, please contact the Customer Relationship Management team at ieee-crm@ieee.org and we will be delighted to help you with any of your conference or event needs.</p>   
+                
+    </div>
+
+    
+    <!-- Bill Breakdown -->
+    <div id="bill-breakdown">
+        <div class="bill-row">
+            <p id="cart-total">Total: ₹1499.00</p>
+        </div>
+        <div class="bill-row">
+            <p id="taxes">Taxes: ₹2.48</p>
+        </div>
+        <div class="bill-row">
+            <p id="shipping">Payment Gateway Charges: ₹7</p>
+        </div>
+        
+        <!-- Discount Code Section -->
+        <div>
+            <label for="discount-code">Discount Code:</label>
+            <input type="text" id="discount-code" placeholder="Enter code" />
+            <button onclick="applyDiscount()">Apply</button>
+        </div>
+        
+        
+        <div class="bill-row">
+            <p id="final-total">Final Total: ₹1531.46</p>
+        </div>
+        
+    
+    
+    
+       
+        <button class="checkout-btn" onclick="proceedToCheckout()">Register and Pay</button>
+    </div>
+</section>
+
+
+<!-- Checkout Section -->
+<!-- Checkout Section -->
+<section id="checkout" class="section">
+    <h2>Checkout</h2>
+    <br>
+    
+    <div class="checkout">
+        <!-- Contact Information -->
+        <div class="checkout-field">
+            <label for="checkout-contact">"Contact Number (Including Country Code)</label>
+            <input type="tel" id="checkout-contact" placeholder="Phone Number"  required />
+<p class="disclaimer">
+    You may receive text messages related to order confirmation and shipping updates. Reply STOP to unsubscribe. Reply HELP for help. Message frequency varies. Msg & data rates may apply. View our Privacy Policy and Terms of service.
+</p>
+
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="checkout-field">
+            
+        </div>
+                  <h2>Confirm Details </h2>
+        <div id="shipping-address-form" class="address-form">
+
+            <div class="address-row">
+                <label for="checkout-name">Full Name</label>
+                <input type="text" id="checkout-name" placeholder="Full Name" required />
+            </div>
+            <div class="address-row">
+                <label for="checkout-email">Email Address</label>
+                <input type="email" id="checkout-email" placeholder="Email Address" required />
+            </div>
+            <div class="address-row">
+                <label for="checkout-address">Shipping Address</label>
+                <input type="text" id="checkout-address" placeholder="Street Address" required />
+            </div>
+            <div class="address-row">
+                <label for="checkout-address2">Address Line 2 (Optional)</label>
+                <input type="text" id="checkout-address2" placeholder="Apartment, Suite, etc." />
+            </div>
+            <div class="address-row">
+                <label for="checkout-pincode">Pincode</label>
+                <input type="text" id="checkout-pincode" placeholder="Pincode" required />
+            </div>
+            <div class="address-row">
+                <label for="checkout-city">City</label>
+                <input type="text" id="checkout-city" placeholder="City" required />
+            </div>
+            <div class="address-row">
+                <label for="checkout-state">State</label>
+                <input type="text" id="checkout-state" placeholder="State" required />
+            </div>
+        </div>
+
+<br>
+
+        <!-- Billing Address Section -->
+        <div class="checkout-field">
+            <label for="same-as-shipping">Billing Address</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="same-as-shipping" onclick="toggleBillingAddress()" checked> Same as Shipping Address</label>
+            </div>
+        </div>
+
+        <!-- Billing Address Form (if different) -->
+        <div id="billing-address-form" class="address-form" style="display:none;">
+            <h3>Enter Billing Address</h3>
+            <div class="address-row">
+                <label for="billing-name">Full Name</label>
+                <input type="text" id="billing-name" placeholder="Full Name" />
+            </div>
+            <div class="address-row">
+                <label for="billing-email">Email Address</label>
+                <input type="email" id="billing-email" placeholder="Email Address" />
+            </div>
+            <div class="address-row">
+                <label for="billing-address">Billing Address</label>
+                <input type="text" id="billing-address" placeholder="Street Address" />
+            </div>
+            <div class="address-row">
+                <label for="billing-address2">Address Line 2 (Optional)</label>
+                <input type="text" id="billing-address2" placeholder="Apartment, Suite, etc." />
+            </div>
+            <div class="address-row">
+                <label for="billing-pincode">Pincode</label>
+                <input type="text" id="billing-pincode" placeholder="Pincode" />
+            </div>
+            <div class="address-row">
+                <label for="billing-city">City</label>
+                <input type="text" id="billing-city" placeholder="City" />
+            </div>
+            <div class="address-row">
+                <label for="billing-state">State</label>
+                <input type="text" id="billing-state" placeholder="State" />
+            </div>
+        </div>
+
+<br>
+
+        <!-- Payment Mode Selection -->
+        <div class="checkout-field">
+            <label>Payment Method</label>
+            <select id="payment-method">
+              <option value="test">Test Registeration</option>
+              <option value="upi">UPI</option>
+             <option value="credit-card">Credit/Debit Card</option>
+                <option value="net-banking">Net Banking</option>
+            </select>
+        </div>
+
+
+        <!-- Order Summary -->
+        <div id="order-summary">
+            <h3>Order Summary</h3>
+            <div id="summary-items">
+                <!-- List of items will appear here -->
+            </div>
+            <div id="order-total">
+                <p>Total: ₹1499</p>
+                <p>Taxes: ₹0</p>
+                <p>Shipping: ₹0.00</p>
+                <p id="final-total">Final Total: ₹1499.00</p>
+            </div>
+        </div>
+        
+        <br>
+        
+
+<button id="rzp-button1" style="display:none; background-color: #2196f3; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 18px;" onclick="validateOnlineOrder()">Pay with Razorpay</button>
+
+
+
+
+        <!-- Place Order Button -->
+        <button class="place-order-btn" onclick="validateOrder()">Place Order</button>
+    </div>
+</section>
+
+<section id="order-confirmation" class="section order-confirmation">
+  <div class="confirmation-box">
+    <h2>Thank You for Your Order!</h2>
+    <p>Your order has been successfully placed. You will receive a confirmation email shortly.</p>
+
+    <div class="order-details">
+      <h3>Order Summary</h3>
+      <p><strong>Order Number:</strong> <span id="order-number"></span></p>
+      <p><strong>Estimated Delivery:</strong> 3-5 Business Days</p>
+      <p><strong>Shipping To:</strong> <span id="shipping-details"></span></p>
+      <p><strong>Payment Method:</strong> <span id="payment-method-confirm"></span></p>
+    </div>
+
+    <div class="confirmation-buttons">
+      <a href="index.html" class="btn">Continue Shopping</a>
+      <a href="track-order.html" class="btn btn-track">Track Order</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="contact-container">
+    <!-- Contact Information -->
+    <div class="contact-details">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong>    BIT  BIJNOR , UTTAR PRADESH 246701</p>
+      <p><strong>Email:</strong> 
+demos@gmail.com</p>
+      <p><strong>Phone:</strong>+911234567891
+      <br>
+       </p>
+       <br>
+    </div>
+    
+    
+   <br>
+   <br>
+   
+
+
+    <!-- Google Map Box -->
+    <div class="map-box">
+      <iframe
+        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="fast"
+      ></iframe>
+    </div>
+  </div>
+    
+   
+      
+      
+      <br>
+"Reach Out directly for Any Issues, Feedbacks or Suggestions"
+
+<br>
+<br>
+
+        <form>
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+            
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ICEE BIT BIJNOR. All rights reserved.</p>
+      
+         <p><a href="orders.html">Admin Login</a></p>  <!-- Admin link -->
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
